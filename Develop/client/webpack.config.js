@@ -18,8 +18,7 @@ module.exports = () => {
       
       new HtmlWebpackPlugin({
         template: './index.html',
-        filename: 'index.html',
-        inject: 'body',
+        title: 'WebpackPlugin'
       }),
       
       new InjectManifest({
@@ -27,22 +26,23 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
-        name: 'JATE',
-        short_name: 'JATE',
-        description: 'This is a browser-based text editor as a single-page application that adheres to PWA standards. This app incorporates multiple data persistence techniques to ensure redundancy and compatibility across various browsers. Additionally, it is designed to function offline.',
-        background_color: '#ffffff',
-        theme_color: '#000000',
-        start_url: '/',
-        publicPath: '/',
+        fingerprints: false,
+        inject: true,
+        name: 'J.A.T.E',
+        short_name: 'J.A.T.E',
+        description: 'J.A.T.E',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
-            src: path.resolve('src/assets/icon.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
         ],
       }),
-      
       
     ],
     module: {
@@ -60,6 +60,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
