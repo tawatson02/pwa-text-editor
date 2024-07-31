@@ -19,7 +19,7 @@ This is a browser-based text editor as a single-page application that adheres to
 
 ## Usage
 
-Once you've completed the installation steps, the terminal will display 'App listening at http://localhost:3001'. Click on the localhost link to access the application. Inside the application, you can add new tasks and remove completed ones.
+Once you've completed the installation steps, the terminal will display 'App listening at http://localhost:3000'. Click on the localhost link to access the application. Inside the application, you can add new tasks and remove completed ones.
 
 ## License
 
